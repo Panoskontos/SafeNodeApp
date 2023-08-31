@@ -6,6 +6,9 @@ const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+// TODO Finish the app
+
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
 db.serialize(() => {
