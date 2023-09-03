@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Assuming you're using npm or yarn to manage dependencies.
-                    sh 'yarn install'
+                    sh 'npm install'
                 }
             }
         }
