@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+
+  environment {
+        // Assuming 'sq1' is the name of your SonarQube environment, 
+        // you'd typically define credentials, URL, and other environment-specific details here.
+        SONARQUBE_SCANNER_HOME = tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    }
+
+    stages {
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Assuming you're using npm or yarn to manage dependencies.
+                    sh 'yarn install'
+                }
+            }
+        }
+
+        stage('Scan with SonarQube') {
+            steps {
+                script {
+                    withSonarQubeEnv('sq1') {
+                        // Run SonarScanner. Ensure your project has a sonar-project.properties file 
+                        // at the root for configuration or provide necessary parameters inline.
+                        sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner"
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Steps to always execute after the pipeline, like cleaning up resources.
+        }
+        success {
+            // Steps to execute only if the pipeline was successful.
+        }
+    }
+}

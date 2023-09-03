@@ -1,13 +1,14 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+import express from 'express';
+import { urlencoded } from 'body-parser';
+// eslint-disable-next-line no-undef
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(urlencoded({ extended: true }));
 
 
-// TODO Finish the app
+
 
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
@@ -66,4 +67,4 @@ app.listen(port, () => {
 });
 
 
-// TODO Finish the app
+
