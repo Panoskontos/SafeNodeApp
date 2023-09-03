@@ -31,12 +31,12 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Steps to always execute after the pipeline, like cleaning up resources.
-        }
-        success {
-            // Steps to execute only if the pipeline was successful.
-        }
-    }
+    // post {
+    //     always {
+    //         // Steps to always execute after the pipeline, like cleaning up resources.
+    //     }
+    //     success {
+    //         // Steps to execute only if the pipeline was successful.
+    //     }
+    // }
 }
