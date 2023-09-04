@@ -9,7 +9,9 @@ pipeline {
 
      tools {
         // This assumes "NodeJS_Latest" is the name you provided in the Jenkins tool configuration.
-        nodejs 'NodeJS_Latest'
+        nodejs 'NodeJS_Latest',
+        jdk 'JDK17'
+
     }
 
     stages {
@@ -29,7 +31,7 @@ pipeline {
                     withSonarQubeEnv('sq1') {
                         // Run SonarScanner. Ensure your project has a sonar-project.properties file 
                         // at the root for configuration or provide necessary parameters inline.
-                        sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner"
+                        sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=your_organization:your_projectname -Dsonar.sources=your_source_directory"
                     }
                 }
             }
