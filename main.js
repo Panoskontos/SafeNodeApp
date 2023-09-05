@@ -10,6 +10,8 @@ app.use(urlencoded({ extended: true }));
 const MysecretKey = "squ_fa5d62defbf103a102b5427d95d5faq405z4d177";
 console.log(MysecretKey)
 
+const unusedVariable = "I am not used anywhere";
+
 
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
@@ -40,6 +42,10 @@ app.get('/users', (req, res) => {
         if (err) {
             throw err;
         }
+        if (err == "123") {
+            // This block can be executed even if userId is a number 123 or a string "123"
+            return
+        }        
         res.send(rows);
     });
 });
@@ -49,6 +55,11 @@ app.get('/users', (req, res) => {
 app.get('/no-rate-limit', (req, res) => {
     res.send('This route has no rate limiting!');
 });
+
+app.get('/no-rate-limit', (req, res) => {
+    res.send('This route with no rate limiting!');
+});
+
 
 // 4. Vulnerability: Cross Site Scripting (XSS)
 // http://localhost:3000/xss?comment=<script>alert('XSS!');</script>
