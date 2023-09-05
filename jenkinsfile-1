@@ -10,7 +10,7 @@ pipeline {
      tools {
         // This assumes "NodeJS_Latest" is the name you provided in the Jenkins tool configuration.
         nodejs 'NodeJS_Latest'
-        jdk 'JDK17'
+        // jdk 'JDK17'
 
     }
 
