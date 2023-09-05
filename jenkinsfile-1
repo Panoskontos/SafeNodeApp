@@ -31,7 +31,9 @@ pipeline {
                     withSonarQubeEnv('sq1') {
                         // Run SonarScanner. Ensure your project has a sonar-project.properties file 
                         // at the root for configuration or provide necessary parameters inline.
-                        sh "${SONARQUBE_SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=your_organization:your_projectname -Dsonar.sources=your_source_directory"
+                     sh '''
+                        ${SONARQUBE_HOME}/bin/sonar-scanner -Dsonar.projectKey=SafeNodeApp -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 
+                    '''
                     }
                 }
             }
