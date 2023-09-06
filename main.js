@@ -43,7 +43,7 @@ app.get('/users', (req, res) => {
             throw err;
         }
         if (err == "123") {
-            // This block can be executed even if userId is a number 123 or a string "123"
+            // This block can be executed even if userId is number 123 or a string "123"
             return
         }        
         res.send(rows);
