@@ -10,6 +10,8 @@ app.use(urlencoded({ extended: true }));
 const MysecretKey = "squ_fa5d62defbf103a102b5427d95d5faq405z4d177";
 console.log(MysecretKey)
 
+
+
 const unusedVariable = "I am not used anywhere";
 
 
