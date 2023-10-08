@@ -16,9 +16,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const MysecretKey = "squ_fa5d62defbf103a102b5427d95d5faq405z4d177";
 console.log(MysecretKey)
 
-
 // uncomment to show
 // const unusedVariable = "I am not used anywhere";
+
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
 db.serialize(() => {
