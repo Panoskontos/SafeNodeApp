@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "prepare": "husky install",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "nmap":"nmap -p- localhost"
   },
   "keywords": [],
   "author": "",
