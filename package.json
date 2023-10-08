@@ -7,7 +7,7 @@
     "test": "jest",
     "prepare": "husky install",
     "lint": "eslint .",
-    "nmap":"nmap -p- localhost"
+    "nmap":"nmap -T4 -F 5189-2a02-85f-fc67-1bfb-cb8d-34cc-9341-2edb.ngrok-free.app"
   },
   "keywords": [],
   "author": "",
