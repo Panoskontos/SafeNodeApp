@@ -6,6 +6,7 @@ app.get('/no-rate-limit', (req, res) => {
     res.send('This route has no rate limiting!');
 });
 
+
 describe('GET /no-rate-limit', () => {
     it('should respond with a message indicating no rate limiting', async () => {
         const response = await request(app).get('/no-rate-limit');
