@@ -1,5 +1,7 @@
-import express from 'express';
-import { urlencoded } from 'body-parser';
+const express = require('express');
+const bodyParser = require('body-parser');
+
+// import { urlencoded } from 'body-parser';
 // eslint-disable-next-line no-undef
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
@@ -7,13 +9,15 @@ const port = 3000;
 
 
 
-app.use(urlencoded({ extended: true }));
+// app.use(urlencoded({ extended: true }));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const MysecretKey = "squ_fa5d62defbf103a102b5427d95d5faq405z4d177";
 console.log(MysecretKey)
 
-// const unusedVariable = "I am not used anywhere";
 
+// const unusedVariable = "I am not used anywhere";
 
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
