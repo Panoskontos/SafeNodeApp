@@ -18,8 +18,8 @@ console.log(MysecretKey)
 
 
 // uncomment to show
-// const unusedVariable = "I am not used anywhere";
 
+// const unusedVariable = "I am not used anywhere";
 
 // Setting up SQLite database
 const db = new sqlite3.Database(':memory:');
