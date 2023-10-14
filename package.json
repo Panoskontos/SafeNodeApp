@@ -7,7 +7,7 @@
     "test": "jest",
     "prepare": "husky install",
     "lint": "eslint .",
-    "nmap":"nmap -T4 -F localhost"
+    "nmap":"nmap -sV --script nmap-vulners/ localhost"
    
   },
   "keywords": [],
